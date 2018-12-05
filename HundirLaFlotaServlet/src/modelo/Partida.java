@@ -108,6 +108,32 @@ package modelo;
 	    	return misDisparos[fila][col];
 	    }
 	    
+	    /**
+		 * Nos devuelve el contenido en la matriz MAR
+		 * @param	f	fila de la casilla
+		 * @param   c   columna de la casilla
+		 * @return		devuelve -1 si es AGUA, -2 si es TOCADO, -3 si HUNDIDO
+		 */	
+	    public int getCasilla(int f, int c) {
+	    	return mar[f][c];
+	    }
+	    
+	    /**
+		 * Nos devuelve el numero de disparos efectuados
+		 */	
+	    public int getDisparos() {
+	    	return this.disparos;
+	    }
+	    
+	    
+	    /**
+	     * Obtenemos el numero de barcos que quedan por hundir 
+	     * @return num de barcos por hundir
+	     */
+	    public int getBarcosRestantes() {
+	    	return this.quedan;
+	    }
+  
 
 		/**
 		 * Devuelve una cadena con los datos de un barco dado: filIni, colIni, orientacion, tamanyo
