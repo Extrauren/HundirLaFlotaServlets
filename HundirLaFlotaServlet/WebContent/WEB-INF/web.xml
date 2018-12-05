@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>HundirLaFlotaServlet</display-name>
+    <servlet-name>HundirLaFlotaServlet</servlet-name>
+    <servlet-class>controlador.HundirLaFlotaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HundirLaFlotaServlet</servlet-name>
+    <url-pattern>/HundirLaFlotaServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
