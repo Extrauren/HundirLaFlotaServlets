@@ -64,16 +64,16 @@ public class HundirLaFlotaServlet extends HttpServlet {
 				String coordenadas[] = request.getParameter("casilla").split("#"); 
 				int fila = Integer.parseInt(coordenadas[0]);
 				int col =  Integer.parseInt(coordenadas[1]);
-				marcada = partida.casillaDisparada(fila, col);					
+				marcada = partida.casillaDisparada(fila, col);			//miramos en la matriz creada anteriormente 		
 				partida.pruebaCasilla(fila, col);									
 			}	
 			
 		}
 		
 		sesion.setAttribute("partida", partida);		
-		request.setAttribute("marcada", marcada);			
+		request.setAttribute("marcada", marcada);		//devolvemos si se ha pulsado o no	
 		
-		RequestDispatcher vista = request.getRequestDispatcher("TableroLocal.jsp");
+		RequestDispatcher vista = request.getRequestDispatcher("TableroActual.jsp");
 		vista.forward(request, response);							
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
