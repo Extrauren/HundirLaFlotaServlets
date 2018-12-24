@@ -11,13 +11,13 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>HundirLaFlotaServlet</display-name>
-    <servlet-name>HundirLaFlotaServlet</servlet-name>
-    <servlet-class>controlador.HundirLaFlotaServlet</servlet-class>
+    <display-name>HundirFlotaServlet</display-name>
+    <servlet-name>HundirFlotaServlet</servlet-name>
+    <servlet-class>controlador.HundirFlotaServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>HundirLaFlotaServlet</servlet-name>
-    <url-pattern>/HundirLaFlotaServlet</url-pattern>
+    <servlet-name>HundirFlotaServlet</servlet-name>
+    <url-pattern>/HundirFlotaServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

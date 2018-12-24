@@ -14,13 +14,15 @@ import modelo.Partida;
 /**
  * Servlet implementation class HundirLaFlotaServlet
  */
-public class HundirLaFlotaServlet extends HttpServlet {
+
+public class HundirFlotaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HundirLaFlotaServlet() {
+	
+    public HundirFlotaServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,20 +48,20 @@ public class HundirLaFlotaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		response.setContentType("text/hyml");    			//marcamos el tipo del contenido
+		response.setContentType("text/html");    			//marcamos el tipo del contenido
 		
 		HttpSession sesion = request.getSession(true);
 		Partida partida = null;
 		boolean marcada = false;
 		
 		
-		if(sesion.getAttribute("partida")==null) {		
+		if(sesion.getAttribute("partida") == null) {		
 			
 			partida = new Partida(8,8,6);			
 			
 		}else {												
 			
-			partida = (Partida) sesion.getAttribute("partida");		
+			partida =  (Partida) sesion.getAttribute("partida");		
 			if(request.getParameter("casilla")!=null) {
 				String coordenadas[] = request.getParameter("casilla").split("#"); 
 				int fila = Integer.parseInt(coordenadas[0]);
@@ -71,7 +73,7 @@ public class HundirLaFlotaServlet extends HttpServlet {
 		}
 		
 		sesion.setAttribute("partida", partida);		
-		request.setAttribute("marcada", marcada);		//devolvemos si se ha pulsado o no	
+		request.setAttribute("marcada", marcada);						//devolvemos si se ha pulsado o no	
 		
 		RequestDispatcher vista = request.getRequestDispatcher("TableroActual.jsp");
 		vista.forward(request, response);							

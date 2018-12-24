@@ -36,6 +36,7 @@ public class SalirPartidaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/hyml");    			//marcamos el tipo del contenido
+		
 		HttpSession sesion = request.getSession(true);
 		sesion.setAttribute("partida", null);
 		sesion.invalidate();								//invalidamos la sesion

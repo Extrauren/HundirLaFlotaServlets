@@ -39,11 +39,13 @@ public class NuevaPartidaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		response.setContentType("text/hyml");    			//marcamos el tipo del contenido
+		response.setContentType("text/html");    			//marcamos el tipo del contenido
+		
 		HttpSession sesion = request.getSession(true);
-		sesion.getAttribute("partida");
+		sesion.removeAttribute("partida");					//removeAttribute, no getAttribute
 		sesion.invalidate();								//invalidamos la sesion actual para crear otra
 		
+		//Mandamos a hundir la flota servlet pero como no hay una sesion la crea
 		RequestDispatcher vista = request.getRequestDispatcher("HundirFlotaServlet"); 
 		vista.forward(request, response);	
 		

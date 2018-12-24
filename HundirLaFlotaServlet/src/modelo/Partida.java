@@ -58,7 +58,7 @@ package modelo;
 	    	if (mar[f][c] == AGUA || mar[f][c] == TOCADO || mar[f][c] == HUNDIDO) {
 	    		return mar[f][c];
 	    	} 
-	    	//Aqu� tratamos con los barcos
+	    	//Aquí tratamos con los barcos
 	    	else {
 	    		
 	    		int posicionBarco = mar[f][c];
@@ -91,13 +91,13 @@ package modelo;
 					quedan--; // restamos 1 a la cantidad
 					//devolvemos la posicion
 					return posicionBarco;
-			
 				} else {					//Si tam barco no coincide el numero de veces tocado lo marcamos solamente como tocado
 					mar[f][c] = TOCADO;
 					return TOCADO;
 				}	
 			}
 	    }
+	    
 	    /**
 		 * Nos dice si se ha disparado en esa casilla
 		 * @param	f	fila de la casilla
@@ -198,7 +198,7 @@ package modelo;
 		 * Coloca los barcos en el tablero
 		 */	
 		private void ponBarcos() {
-			/* Por defecto colocamos un barco de tamaño 4, uno de tamaño 3, otro de tamaño 2 y tres barcos de tamaño 1 */
+			/* Por defecto colocamos un barco de tamaÃ±o 4, uno de tamaÃ±o 3, otro de tamaÃ±o 2 y tres barcos de tamaÃ±o 1 */
 			barcos.add( ponBarco(0, 4) );
 			barcos.add( ponBarco(1, 3) );
 			barcos.add( ponBarco(2, 2) );
@@ -263,6 +263,7 @@ package modelo;
 		 * @param  ori    orientacion del barco: 'H' o 'V'
 		 * @return        true si se encuentra hueco, false si no.
 		 */	
+		
 	    private boolean librePosiciones(int fila, int col, int tam, char ori) {
 	    	int i;
 	        if (ori == 'H') {
