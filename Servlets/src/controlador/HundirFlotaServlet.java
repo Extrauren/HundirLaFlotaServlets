@@ -32,7 +32,6 @@ public class HundirFlotaServlet extends HttpServlet {
 	 */
     
     
-    
     /**Cargar la sesion o crearla si no existe
     *Si la sesion no contiene el atributo ’partida’
     *Crear la partida
